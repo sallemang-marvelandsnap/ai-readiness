@@ -35,3 +35,5 @@ AI answers lift **early, complete, quotable** sentences. This is content craft, 
 3. Would a competitor’s name be clearer than ours in those sentences?
 
 **Owner:** content. **Dev** only if the answer is trapped in the builder (image, widget, empty `post_content`).
+
+**Client version** (no stack jargon): [09 — Writing pages that AI can quote](09-client-citeability.md).

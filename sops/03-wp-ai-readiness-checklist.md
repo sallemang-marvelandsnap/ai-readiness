@@ -24,7 +24,7 @@
 ## Discoverability / `llms.txt` — owner: SEO / content
 
 - [ ] Yoast `llms.txt` is **enabled**.
-- [ ] **Manual page selection** of ~10–30 money pages (home, platform/product, solutions, about). Not Yoast’s auto “5 latest per type.”
+- [ ] **Manual page selection** of ~10–30 money pages (home, platform/product, solutions, about). Path: Yoast SEO → Settings → Site features → AI tools → llms.txt → Customize llms.txt file → Manual page selection. Not Yoast’s auto “5 latest per type.”
 - [ ] Each link has a real description (Yoast meta description). Empty lines usually mean Bricks `post_content` is empty — fix with meta + `wpseo_llmstxt_link_description`, not another plugin.
 - [ ] No password-protected, noindex, or “hide from archive” URLs.
 - [ ] File is current (quarterly refresh with the money pages).
@@ -40,7 +40,7 @@ Google Search **ignores** `llms.txt`. We still ship it as cheap hygiene. Do not 
 - [ ] Yoast Organization on home/About: `@id` matches the home URL; `sameAs` is complete.
 - [ ] Brand and product names are consistent (no “OpenSpace Track” vs “OS Track” split).
 - [ ] Article / BlogPosting on editorial; FAQPage only where visible Q&A exists; HowTo only on real steps.
-- [ ] Leadership / team / products / services / events: data in ACF or a CPT; **schema only on the single** (or the About page if a one-off repeater). Cards and “related” blocks are display-only. See [08](08-schema-data-and-cards.md).
+- [ ] Leadership / team / products / services / events: one-page-only = Bricks card grid; reused = CPT + ACF. **Schema only on the single** (or once on About if the grid never leaves that page). Cards and “related” blocks are display-only. See [08](08-schema-data-and-cards.md).
 - [ ] **One `@graph`.** View source: a single Yoast JSON-LD block. Fail if a Bricks card or element prints its own `<script type="application/ld+json">`.
 - [ ] Schema matches visible text (Google’s bar).
 - [ ] Validate a sample in Rich Results Test. *Confirm conflict patterns (Yoast + Bricks + ACF) on live audit.*
