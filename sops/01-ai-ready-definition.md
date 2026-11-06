@@ -129,7 +129,7 @@ Shopify already covers **access-for-agents** and a **product index**: default `r
 What Yoast gives us on WordPress that we still **do ourselves** on Shopify (theme, metafields, admin — not a new app):
 
 - **Organization + `sameAs`** — often missing. Add via theme JSON-LD or brand settings.
-- **Product graph completeness** — Dawn-like themes emit a basic Product. Check brand, GTIN/barcode, offers, availability, ratings, shipping/returns. Legacy PDPs mixed with new templates (Baffin-style) are the usual fail.
+- **Product graph completeness** — Dawn-like themes emit a basic Product. Check brand, GTIN/barcode, offers, availability, ratings, shipping/returns. Legacy PDPs mixed with new templates are the usual fail.
 - **`llms.txt`** — no Yoast UI. **Not required.** Catalog + PDP HTML matter more. Add a theme-root file only if we want the same cheap hygiene as WP; do not buy a generator app.
 - **Money-page / PDP copy** — native Shopify SEO title and description + citeable first lines in the product description ([09](09-client-citeability.md)).
 - **Article / page schema** — blog and landing templates; fix in the theme if missing. Still one graph — no duplicate schema apps.

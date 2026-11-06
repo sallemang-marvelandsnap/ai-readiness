@@ -92,7 +92,7 @@ Bricks grid of Team Card components on About. Optional Person schema on that pag
 **About + Team + bylines**  
 CPT `team`. Jane has `/team/jane-doe/`. About and the blog query that CPT. Schema for Jane only on `/team/jane-doe/`. Cards just link there.
 
-**Software products (OpenSpace-like)**  
+**Software products**  
 CPT `product` (or `software`). Single template = full `SoftwareApplication` in Yoast’s graph. Archive and “Related products” use the same card, **no** extra schema. The card’s title and image must match the single (same official name).
 
 **Webinars**  
@@ -125,4 +125,4 @@ Same as products, CPT `event`, schema type `Event`, only on the event permalink.
 - [ ] Each reused person/product has one permalink
 - [ ] Cards and related blocks have **no** extra JSON-LD
 - [ ] The single has one Yoast graph piece and a stable `@id`
-- [ ] Names on cards match the single (no “OS Track” vs “OpenSpace Track”)
+- [ ] Names on cards match the single (no “NW Track” vs “Northwind Track”)

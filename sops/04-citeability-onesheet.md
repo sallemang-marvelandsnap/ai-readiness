@@ -7,12 +7,12 @@ AI answers lift **early, complete, quotable** sentences. This is content craft, 
 ## Do this on money pages
 
 - **Lead with the answer.** Paragraph one: what it is or what you do, in one sentence, before the story.
-- **Self-contained claims.** “OpenSpace Track is construction progress-tracking software.” not “It’s the tool we mentioned earlier.”
+- **Self-contained claims.** “Northwind Track is construction progress-tracking software.” not “It’s the tool we mentioned earlier.”
 - **One idea per short block** (two to four sentences). Lists and tables when the content is actually listable or comparable.
 - **Question-style H2/H3** when the section answers a real question (“What is X?”, “X vs Y”).
 - **Comparison and best-of** where honest: people ask AI that way.
 - **Named sources, numbers, original data.** Case studies and proprietary stats get cited; adjectives do not.
-- **Same name everywhere.** Pick “OpenSpace Track” or “OS Track,” not both.
+- **Same name everywhere.** Pick “Northwind Track” or “NW Track,” not both.
 - **Quarterly refresh** on top pages: new example, current year, resubmit in Search Console.
 
 ---

@@ -1,7 +1,6 @@
 # Shopify product-data checklist (draft)
 
-**Pilot:** [baffin.com](https://www.baffin.com/) (newer PDP + legacy mix).  
-**We do not build a Shopify MCP app** and we do not need a Yoast equivalent. Shopify already exposes UCP/MCP and `/agents.md` (Baffin’s `robots.txt` points at `/agents.md`, `/.well-known/ucp`, `/api/ucp/mcp`). Our job is what Yoast would have been on WP: **catalog quality**, **theme schema**, citeable PDP copy, then Catalog / Agentic Storefronts in admin. See the map in [01](01-ai-ready-definition.md).
+**We do not build a Shopify MCP app** and we do not need a Yoast equivalent. Shopify already exposes UCP/MCP and `/agents.md` on modern stores (`robots.txt` often points at `/agents.md`, `/.well-known/ucp`, `/api/ucp/mcp`). Our job is what Yoast would have been on WP: **catalog quality**, **theme schema**, citeable PDP copy, then Catalog / Agentic Storefronts in admin. See the map in [01](01-ai-ready-definition.md).
 
 Official reading still to distill into the rows below: [product data for AI channels](https://www.shopify.com/enterprise/blog/product-data-tips-ai-channels), [agentic-ready product data](https://www.shopify.com/enterprise/blog/agentic-ready-product-data), [ecommerce schema](https://www.shopify.com/blog/ecommerce-schema), [SearchMention checklist](https://searchmention.com/blog/ai-search-optimization-for-shopify).
 
@@ -34,4 +33,4 @@ On a sample of PDPs, including **new** and **legacy** templates:
 - [ ] AI-channel / Catalog attribution in admin if Agentic Storefronts is on.
 - [ ] Same citation-baseline idea as WP for brand queries.
 
-**Still need:** walk Baffin admin + a new vs legacy PDP and fill concrete pass/fail examples. Do not wait on a custom app.
+**Still need:** on the next Shopify job, walk admin plus a new **and** a legacy PDP and fill concrete pass/fail examples. Do not wait on a custom app.

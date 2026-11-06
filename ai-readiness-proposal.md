@@ -40,7 +40,7 @@ ElevateX (`elevatex` Bricks branch) already has the right hooks: empty custom-el
 - **`mcp-adapter` (plugin)** — install on **local and staging** when we want studio MCP. Not a production default while Bricks marks abilities experimental. Production later only with a written security SOP (dedicated Application Password user, least privilege, off on live until Bricks says otherwise).
 - **Yoast (already standard)** — `llms.txt`, Organization, `@graph`. Extend with filters. No Rank Math / AIOSEO / AI Ready WP / second `llms.txt` generator.
 - **ElevateX child theme** — this is the AI toolbox for *every* WP site:
-  - `inc/hooks/ai-readiness.php` (or similar): `wpseo_llmstxt_link_description` (Bricks empty `post_content` → Yoast meta description); optional `robots_txt` **or** a documented Yoast file-editor snippet (not both); never a second JSON-LD script.
+  - `inc/hooks/ai-readiness.php` (or similar) — **not written yet.** `robots_txt` filter (studio allow-list; no-op if Yoast has a physical file); `wpseo_llmstxt_link_description` (Bricks empty `post_content` → Yoast meta); never a second JSON-LD script.
   - `inc/bricks/elements/` — FAQ first (visible semantic Q&A + Yoast `wpseo_schema_graph_pieces`). Later: HowTo, lede/answer-first, comparison table.
   - Optional later: register a few **M&S Abilities** (e.g. “list pages missing meta description,” “export FAQ pairs”) so Track B agents can QA our conventions. That belongs in the theme only after MCP Adapter is a known staging tool.
 - **Bricks → AI (core Bricks, not ElevateX)** — enable abilities on local/staging; install official Bricks skills into Cursor. Do **not** add the third-party `bricks-mcp` plugin if official 2.4 abilities cover the job.
@@ -55,7 +55,7 @@ ElevateX (`elevatex` Bricks branch) already has the right hooks: empty custom-el
 
 1. **Production MCP:** Off on live. On for local + staging only.
 2. **Crawlers:** Always allow live-retrieval bots. Allow training bots unless the client opts out.
-3. **`robots.txt` path:** Still pick one implementation after a Yoast-on-Bricks spike (physical Yoast file vs `robots_txt` filter). Policy is not blocked.
+3. **`robots.txt` path:** ElevateX `robots_txt` filter (Yoast file editor empty). Filter **not in the theme yet** — until it ships, Yoast file editor or WP default. Never both. Never a physical file as a Yoast-missing fallback.
 
 **Norm:** ElevateX Bricks branch, Bricks 2.4+, WordPress 6.9+ (or latest).
 
@@ -88,10 +88,16 @@ Still required; MCP does not finish this.
 - Writer citeability one-sheet
 - Lunch-and-learn + a proposal add-on (Audit → Fixes → Monitoring)
 
-**ElevateX build (after the Yoast spike, not before):**
+**ElevateX build (theme / tool-set — none of this is in the repo yet):**
 
-- `inc/hooks/ai-readiness.php` table-stakes
-- FAQ element in `inc/bricks/elements/`
+- `inc/hooks/ai-readiness.php`
+  - `robots_txt` — append retrieval (+ training unless opted out) allow-list; skip if Yoast’s physical file exists
+  - `wpseo_llmstxt_link_description` — use Yoast meta when Bricks `post_content` is empty
+- `BRICKS_DISABLE_MCP` when `Foundation::is_pantheon( 'live' )` or `WP_ENVIRONMENT_TYPE === 'production'`
+- Yoast schema bridge (`wpseo_schema_graph_pieces`)
+- FAQ Bricks element (HTML + Yoast FAQ piece, same fields)
+- Later: HowTo, comparison, Review/Offer elements; CPT kits (Team / Product / Service / Event) behind a flag; lede as a **Bricks component**, not PHP
+- Copy `figma-to-bricks-drafts` skill into ElevateX if that is how projects get Cursor skills
 
 Suggested first artifact: **WordPress AI-Readiness Checklist**, holes labeled “confirm on live audit.”
 

@@ -1,7 +1,7 @@
 # Crawler policy (draft)
 
 **Default (locked):** always allow live-retrieval bots. Allow training bots unless the client opts out.  
-**`robots.txt` implementation:** pick **one** path after the Yoast-on-Bricks spike. Do not run a Yoast physical file *and* an ElevateX `robots_txt` filter.
+**`robots.txt` implementation:** **Prefer the ElevateX `robots_txt` filter** for the studio allow-list (versioned, every site). **To-do** — ElevateX does not have this hook yet (`inc/hooks/` is ACF + client-scripts only). Until it ships, use Yoast’s file editor or WP’s default virtual file. Leave Yoast → Tools → File editor empty. Do not run a Yoast physical file *and* the filter — the file wins and the filter is ignored. Do not auto-create a physical `robots.txt` if Yoast is missing; WordPress already serves a virtual file, the filter still applies, and Yoast is required on this stack.
 
 ---
 
@@ -22,7 +22,7 @@ OpenAI: sites that block `OAI-SearchBot` do not appear in ChatGPT search.
 ## Do not
 
 - Block all bots on **production** (Pantheon test envs that `Disallow: /` are fine).
-- Rely on Content Signals (`ai-train` / `search` / `ai-input` / `use=…`) alone. OpenSpace already emits `Content-Signal`; treat as extra, not the policy.
+- Rely on Content Signals (`ai-train` / `search` / `ai-input` / `use=…`) alone. Treat as extra, not the policy.
 - Add invented `Link` `rel="llms"` / `rel="ai"` headers.
 
 ## Sample retrieval + training allow snippet
@@ -42,8 +42,8 @@ User-agent: CCBot
 Allow: /
 ```
 
-Paste into Yoast → Tools → File editor **or** append via `robots_txt` if no physical file exists.
+Append via the ElevateX `robots_txt` filter. Paste into Yoast → Tools → File editor only if we have agreed to skip the filter on that site.
 
-## Cloudflare
+## Edge / WAF (Pantheon, not Cloudflare)
 
-Check bot fight / AI scrape rules on live. A correct `robots.txt` does nothing if the CDN returns 403 to those user-agents.
+WP sites are on Pantheon. Check that Global CDN / WAF or a security plugin is not 403ing retrieval user-agents. A correct `robots.txt` does nothing if the edge blocks the bot. Do not assume a Cloudflare Bot Fight screen — we are not on Cloudflare.
