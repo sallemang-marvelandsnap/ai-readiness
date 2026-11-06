@@ -88,7 +88,7 @@ FAQ, HowTo, comparison, and Review/Offer will be **custom Bricks elements**, wri
 - **HowTo** — the page is a real procedure with numbered steps. Do not mark a marketing page as HowTo.
 - **Comparison table** — there is a real side-by-side comparison, not fake comparison markup.
 - **Review / Offer** — this vertical repeats reviews or offers (e.g. commerce), and any ratings in schema are also visible on the page.
-- **Lede / answer-first** — a visible opening sentence that says what it is, in HTML (not only in the hero). Example: “Northwind is project-controls software for industrial contractors.” **Not a custom element** — a Bricks component or text block is enough; there is no Yoast graph piece to justify PHP. Yoast’s description can reuse those words for snippets / `llms.txt`; it does not replace on-page text. Do not hide it for bots (cloaking). [08](08-client-citeability.md).
+- **Lede / answer-first** — a visible opening sentence that says what it is, in HTML (not only in the hero). Example: “Northwind is construction software for industrial contractors.” **Not a custom element** — a Bricks component or text block is enough; there is no Yoast graph piece to justify PHP. Yoast’s description can reuse those words for snippets / `llms.txt`; it does not replace on-page text. Do not hide it for bots (cloaking). [08](08-client-citeability.md).
 
 **When we write those elements in ElevateX (theme work, not page order)**
 
