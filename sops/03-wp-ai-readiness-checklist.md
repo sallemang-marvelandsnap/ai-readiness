@@ -8,7 +8,7 @@ We do **not** promise rankings in ChatGPT. Do **not** send this file to clients.
 
 **Owners** are named on each section. **Money pages** = home, product/platform, solutions, About, and any URL the client would be unhappy to lose.
 
-**Where to look:** production (or the URL that will become production). Non-live Pantheon environments (`test`, `dev`, multidev) often `Disallow: /` for every bot. That is expected. Do **not** fail a staging URL for blocked crawlers. Fail **live** if production still blocks retrieval bots.
+**Where to look:** production (or the URL that will become production). Do **not** fail Pantheon staging for `Disallow: /` — that policy is in [05](05-crawler-policy.md).
 
 Rows marked *confirm on live audit* cannot be judged from the repo — check this site’s live (or soon-to-be-live) URL or server logs.
 
@@ -16,15 +16,15 @@ Rows marked *confirm on live audit* cannot be judged from the repo — check thi
 
 ## Access — can bots fetch the live page?
 
-**Owner:** dev / SEO.
+**Owner:** dev / SEO. Policy, bot lists, `robots.txt` source, sample snippet, and `curl -A` are in [05](05-crawler-policy.md). This section is only pass/fail on **this** URL.
 
-**How:** On **live**, open `/robots.txt`. Fail if `User-agent: *` + `Disallow: /`, or if a named retrieval bot is `Disallow`. Then fetch the homepage *as* a bot: `curl -sI -A "OAI-SearchBot" https://example.com/` (repeat for `ChatGPT-User` if you want). Pass = `200` (or a normal redirect). Fail = `403`/`429` with an empty or WAF body — that is the edge, not `robots.txt`. For the file source: **Yoast SEO → Tools → File editor**. If `robots.txt` is saved there, that physical file wins and any ElevateX `robots_txt` filter is ignored. If the editor is unused, grep the theme for `robots_txt`. **Prefer the ElevateX filter** for the studio allow-list (versioned, every site). **Not in the theme yet** — until `inc/hooks/ai-readiness.php` (or similar) ships, this row is n/a or a Yoast file-editor one-off, not both. Leave Yoast’s file editor empty. Do not write a physical `robots.txt` if Yoast is missing — WordPress already serves a virtual file and the filter still runs; a physical file is what *breaks* the filter. Yoast is required on this stack anyway. Sitemap: GSC and Bing Webmaster → sitemaps, not only that `/sitemap_index.xml` exists.
+**How:** Follow [05](05-crawler-policy.md) on production (`/robots.txt`, then `curl -sI -A "OAI-SearchBot"`). Sitemap is not in 05: confirm it is submitted in Google Search Console **and** Bing Webmaster Tools, not only that `/sitemap_index.xml` exists.
 
-- [ ] Live `robots.txt` does **not** block live-retrieval bots: `OAI-SearchBot`, `ChatGPT-User`, `Claude-SearchBot`, `Claude-User`, `PerplexityBot`, `Perplexity-User`, `Bingbot`.
-- [ ] Training bots (`GPTBot`, `ClaudeBot`, `Google-Extended`, `CCBot`) are allowed unless the client opted out of training.
-- [ ] Nothing in front of WordPress is silently 403ing those user-agents (Pantheon Global CDN / WAF, a security plugin). A correct `robots.txt` does not help if the edge returns 403. *Confirm on live audit (`curl -A` and/or host logs).*
-- [ ] One `robots.txt` source only. **Prefer** ElevateX `robots_txt` (Yoast file editor empty) **once that filter exists**. Until then: Yoast file editor is the only path, or leave WP default if retrieval bots are already allowed. Never both; never a physical file as a “Yoast is missing” fallback. *Confirm on live audit which this site uses.*
-- [ ] A sitemap exists and is submitted to **Google Search Console and Bing Webmaster Tools**.
+- [ ] Live `robots.txt` does **not** block retrieval bots ([05](05-crawler-policy.md)).
+- [ ] Training bots are allowed unless the client opted out ([05](05-crawler-policy.md)).
+- [ ] The edge is not 403ing those user-agents (`curl -A` in [05](05-crawler-policy.md)). *Confirm on live audit.*
+- [ ] One `robots.txt` source only, per [05](05-crawler-policy.md) (ElevateX filter when it exists; never both). *Confirm on live audit which this site uses.*
+- [ ] Sitemap submitted to **Google Search Console and Bing Webmaster Tools**.
 
 ---
 
