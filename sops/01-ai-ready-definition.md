@@ -108,8 +108,8 @@ Yoast will output Organization and a blog *author*. It will **not** notice a Lea
 
 **Do this**
 
-- Appears on **one page only** (six board members, only on About) → Bricks grid of Team Card components (or equivalent). No Team post type, no ACF repeater.
-- The **same** person/product/service/event appears in more than one place → turn on that ElevateX **kit** (CPT + ACF + Bricks single + post card + Yoast bridge). The card is heading, image, excerpt, and a link to the official URL — no JSON-LD on the card. Schema only on the single.
+- Appears on **one page only** (six board members, only on About) → Bricks grid of Team Cards. No Team post type, no ACF repeater. If Person belongs on that page (people are visible), the card or its Yoast hook appends Person from the same fields — same pattern as FAQ. Details: [07](07-schema-data-and-cards.md).
+- The **same** person/product/service/event appears in more than one place → turn on that ElevateX **kit** (CPT + ACF + Bricks single + post card + Yoast bridge). The teaser card is heading, image, excerpt, and a link to the official URL. Schema only on the single.
 
 **Kits we may wish to support, flagged per site:** Team/Person, Product or SoftwareApplication, Service, Event.
 

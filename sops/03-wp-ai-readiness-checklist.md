@@ -51,7 +51,7 @@ Rows marked *confirm on live audit* cannot be judged from the repo — check thi
 - [ ] Yoast **Organization** on home/About: `@id` is the home URL; **`sameAs`** lists the official profiles (LinkedIn, Wikipedia, social).
 - [ ] Brand and product names are the same everywhere (not “Northwind Track” on one page and “NW Track” on another).
 - [ ] Article / BlogPosting on editorial. FAQPage only where visible Q&A exists. HowTo only on real step-by-step pages.
-- [ ] Leadership / team / products / services / events: **one page only** → Bricks card grid (e.g. Team Card). **Reused in several places** → CPT + ACF kit. Schema only on the official single (or once on About if the grid never leaves that page). Cards and “related” blocks are display + link only — no JSON-LD on the card.
+- [ ] Leadership / team / products / services / events: **one page only** → Bricks card grid (e.g. Team Card); if that schema type belongs on the page, the card or its Yoast hook appends it from the same fields. **Reused in several places** → CPT + ACF kit; schema only on the official single. Teasers are display + link — no second JSON-LD script, and no full Person/Product re-appended on the card.
 - [ ] **One `@graph`.** Fail if a Bricks card or element prints its own JSON-LD script.
 - [ ] Schema facts match visible text (Google’s bar).
 - [ ] A sample URL passes [Rich Results Test](https://search.google.com/test/rich-results). *Confirm Yoast + Bricks + ACF conflict patterns on live audit.*
