@@ -19,7 +19,7 @@ This is how we implement designs. It is not an AI-search ranking feature. The ad
 3. Create a **dedicated WordPress user** (least privilege that can use the builder) and an **Application Password**. Store it in 1Password, never in git.
 4. Point Cursor at `/wp-json/mcp/mcp-adapter-default-server` via `@automattic/mcp-wordpress-remote` (Bricks shows the snippet).
 5. Install **official Bricks skills in Cursor** (not on the WordPress site). They are optional instruction packs from **Codeer** (the Bricks company) — GitHub org `codeerhq` is them, not a third-party plugin. They teach the agent how to call Bricks abilities; they do not add permissions. Easiest: **Bricks → AI → Skills** → copy the install prompt → paste it into a Cursor chat. Or clone [codeerhq/bricks-skills](https://github.com/codeerhq/bricks-skills) and symlink the folders you want into `.cursor/skills/`. We need **`bricks-start-here`**, **`bricks-design-systems`**, **`bricks-naming-conventions`**, **`bricks-figma-to-bricks`**, **`bricks-html-css-to-bricks`**. Then load our project skill `figma-to-bricks-drafts` (ElevateX overlay: theme tokens first, no extra JSON-LD, local/staging only). Verify with the prompt on the same Bricks tab, or ask Cursor to list loaded Bricks skills. Do **not** install a community `bricks-mcp` WordPress plugin. [Academy](https://academy.bricksbuilder.io/builder/features/ai-abilities-and-skills/).
-6. Connect Figma MCP to the **project file**, not a random library, unless we have agreed a shared M&S set.
+6. Connect Figma MCP to the **project file**, not a random library, unless we have agreed a shared M&S set. Cursor Settings → MCP → Figma signed in; paste this job’s Figma URL in chat and confirm the file name before drafting. See [04](04-figma-to-bricks-drafts.md).
 
 Confirm “Connected” in Bricks → AI. If the REST route is missing, check permalinks and plugin conflicts.
 
@@ -45,4 +45,4 @@ When the engagement ends, revoke the Application Password and confirm Bricks AI 
 
 ## Headline workflow
 
-See [05-figma-to-bricks-drafts.md](05-figma-to-bricks-drafts.md).
+See [04-figma-to-bricks-drafts.md](04-figma-to-bricks-drafts.md).

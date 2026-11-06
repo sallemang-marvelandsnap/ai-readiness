@@ -63,7 +63,7 @@ ElevateX (`elevatex` Bricks branch) already has the right hooks: empty custom-el
 **Pilot Shopify:** [Baffin](https://www.baffin.com/).  
 **Pilot Figma:** [WCS 2026](https://www.figma.com/design/WDZuMgX6wyAL9uH60k7vmp/WCS-2026-Redesign?node-id=2001-4149) (incomplete), [Lightenco](https://www.figma.com/design/MgRb1VWi78Zegzz7iHqplF/Lightenco-Theme?node-id=0-1) (names may be stale).
 
-**Drafts started** in [`sops/`](sops/) (including [08 — data, cards, one graph](sops/08-schema-data-and-cards.md)) and [`.cursor/skills/figma-to-bricks-drafts/`](.cursor/skills/figma-to-bricks-drafts/).
+**Drafts started** in [`sops/`](sops/) (including [07 — data, cards, one graph](sops/07-schema-data-and-cards.md)) and [`.cursor/skills/figma-to-bricks-drafts/`](.cursor/skills/figma-to-bricks-drafts/).
 
 ### 2. Track A — close the ticket (the original job)
 
@@ -85,7 +85,7 @@ Still required; MCP does not finish this.
 - Crawler policy SOP
 - Schema / entity SOP (Yoast as sole `@graph`)
 - `llms.txt` SOP (Yoast-only; don’t oversell)
-- Writer citeability one-sheet
+- Writer citeability one-sheet ([08](sops/08-client-citeability.md))
 - Lunch-and-learn + a proposal add-on (Audit → Fixes → Monitoring)
 
 **ElevateX build (theme / tool-set — none of this is in the repo yet):**

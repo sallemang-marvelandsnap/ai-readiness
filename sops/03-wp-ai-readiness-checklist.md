@@ -1,8 +1,8 @@
 # WordPress AI-readiness checklist
 
-**Marvel & Snap — internal.** This is the **Track A** launch and audit list — the **live client site** (crawlers, citeable pages, Yoast), not the studio Figma → Bricks MCP workflow. Can retrieval bots fetch it, is the Yoast graph honest, can a model quote the money pages, and can we measure anything. Use it on a real URL (QA before launch, or a live audit). Mark each row **pass**, **fail**, or **n/a**. The definition of “AI-ready” is [01](01-ai-ready-definition.md). Shopify stores use [07](07-shopify-product-data-checklist.md) instead.
+**Marvel & Snap — internal.** This is the **Track A** launch and audit list — the **live client site** (crawlers, citeable pages, Yoast), not the studio Figma → Bricks MCP workflow. Can retrieval bots fetch it, is the Yoast graph honest, can a model quote the money pages, and can we measure anything. Use it on a real URL (QA before launch, or a live audit). Mark each row **pass**, **fail**, or **n/a**. The definition of “AI-ready” is [01](01-ai-ready-definition.md). Shopify stores use [06](06-shopify-product-data-checklist.md) instead.
 
-We do **not** promise rankings in ChatGPT. Do **not** send this file to clients. Writers get [09](09-client-citeability.md).
+We do **not** promise rankings in ChatGPT. Do **not** send this file to clients. Writers get [08](08-client-citeability.md).
 
 **Stack:** Bricks 2.4+ + ElevateX + Yoast. Do not add an “AI SEO” plugin or a second `llms.txt` generator.
 
@@ -44,7 +44,7 @@ Rows marked *confirm on live audit* cannot be judged from the repo — check thi
 
 ## Schema — one Yoast JSON-LD packet
 
-**Owner:** dev / SEO. This is the **Facts** layer in [01](01-ai-ready-definition.md): official names and attributes (Organization, `sameAs`, product/person records) in **one** structured-data blob. It is for rich results and entity clarity, not a ChatGPT ranking lever. How we attach extras: [08](08-schema-data-and-cards.md).
+**Owner:** dev / SEO. This is the **Facts** layer in [01](01-ai-ready-definition.md): official names and attributes (Organization, `sameAs`, product/person records) in **one** structured-data blob. It is for rich results and entity clarity, not a ChatGPT ranking lever. How we attach extras: [07](07-schema-data-and-cards.md).
 
 **How:** View source on home and one money page. Search `ld+json` — there should be **one** Yoast `<script>`. Paste it into [Rich Results Test](https://search.google.com/test/rich-results) and [schema markup validator](https://validator.schema.org/). Check Organization `@id` = home URL and `sameAs` matches real profiles. **Mark the row fail** if you find a second `<script type="application/ld+json">` (for example a Bricks FAQ, card, or HTML element dumping its own schema). FAQ/HowTo belong in Yoast’s graph only if that Q&A or those steps are visible on the page.
 
@@ -60,7 +60,7 @@ Rows marked *confirm on live audit* cannot be judged from the repo — check thi
 
 ## Citeability — can you quote the first screen?
 
-**Owner:** content / dev. Give writers [09](09-client-citeability.md). A lede is a visible first sentence (Bricks component or text block), not a custom element and not hidden text.
+**Owner:** content. Dev only if the sentence is trapped in the builder (image, widget, empty `post_content`). Give writers — client and internal — [08](08-client-citeability.md). A lede is a visible first sentence (Bricks component or text block), not a custom element and not hidden text. `llms.txt` and schema do not fix thin copy. Do not generate Markdown clones of every page.
 
 **How:** On each money page, read only the first screen (or Reader view). You should be able to paste one sentence that says **what this is** or **what they do** (not a hero vibe line). If you cannot, fail the row. That is our citeability test, not an SEO/AI-Overview term called “definition.” View source (or disable images) and confirm that sentence is real text, not a background image or a closed JS drawer. Canonical: one URL in Yoast + the address bar, slash style consistent.
 

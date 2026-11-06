@@ -1,6 +1,6 @@
 # What “AI-ready” means
 
-**Marvel & Snap — internal.** Use this when scoping a site or deciding whether to add a plugin. Step-by-step checks: [03 — WordPress](03-wp-ai-readiness-checklist.md), [07 — Shopify](07-shopify-product-data-checklist.md). Do **not** send this file to clients. Writers get [09](09-client-citeability.md).
+**Marvel & Snap — internal.** Use this when scoping a site or deciding whether to add a plugin. Step-by-step checks: [03 — WordPress](03-wp-ai-readiness-checklist.md), [06 — Shopify](06-shopify-product-data-checklist.md). Do **not** send this file to clients. Writers get [08](08-client-citeability.md).
 
 We make pages **eligible** to be crawled, understood, and quoted. We do **not** promise rankings in ChatGPT or Google AI answers.
 
@@ -12,7 +12,7 @@ We make pages **eligible** to be crawled, understood, and quoted. We do **not** 
 
 - **Dev / site-admin** — crawlers, Yoast (or theme schema on Shopify), ElevateX elements, CPT kits, Catalog eligibility.
 - **SEO / PM** — money-page list, `llms.txt` curation, Search Console / Bing, measurement.
-- **Client / writers** — the sentences on money pages. Give them [09](09-client-citeability.md) at kickoff or with a content workshop. Do not send this definition or [08](08-schema-data-and-cards.md).
+- **Client / writers** — the sentences on money pages. Give them [08](08-client-citeability.md) at kickoff or with a content workshop. Do not send this definition or [07](07-schema-data-and-cards.md).
 
 **Money pages** = home, product/platform, solutions, About, and any URL the client would be unhappy to lose.
 
@@ -39,7 +39,7 @@ On WordPress, **Yoast prints one `@graph`** (one JSON-LD packet) in the page sou
 
 A lot of that packet already lives in **Yoast and site settings** — Organization, `sameAs`, titles, descriptions, Article, breadcrumbs, the post author. Fill those there.
 
-What we bolt on is **bespoke or enriching**: leadership grids, product/service/event records, FAQ fields Yoast has no screen for. *That* data lives in ACF / CPTs (or Shopify on ecom). We stitch it *into* Yoast’s graph with a small ElevateX PHP bridge on Yoast’s Schema API (`wpseo_schema_graph_pieces` / `wpseo_schema_graph`) — Yoast is still the printer for those extras, not their CMS. How: [08](08-schema-data-and-cards.md). Never add a second `<script type="application/ld+json">` from a Bricks element or another plugin.
+What we bolt on is **bespoke or enriching**: leadership grids, product/service/event records, FAQ fields Yoast has no screen for. *That* data lives in ACF / CPTs (or Shopify on ecom). We stitch it *into* Yoast’s graph with a small ElevateX PHP bridge on Yoast’s Schema API (`wpseo_schema_graph_pieces` / `wpseo_schema_graph`) — Yoast is still the printer for those extras, not their CMS. How: [07](07-schema-data-and-cards.md). Never add a second `<script type="application/ld+json">` from a Bricks element or another plugin.
 
 ### 3. Citeability — sentences a model can lift
 
@@ -49,7 +49,7 @@ Models quote **early, complete sentences in the HTML** — usually the first two
 
 ### 4. Agent commerce — Shopify only
 
-Shopify already ships `/agents.md`, UCP/MCP, and Catalog / Agentic Storefronts. We do **not** build a shopping-agent app or MCP Server Cards. We still do the work Yoast would have done on WordPress: complete product facts, theme Product/Organization schema, citeable PDP copy, Catalog eligibility. Details in [Shopify vs WordPress](#shopify-vs-wordpress) and [07](07-shopify-product-data-checklist.md).
+Shopify already ships `/agents.md`, UCP/MCP, and Catalog / Agentic Storefronts. We do **not** build a shopping-agent app or MCP Server Cards. We still do the work Yoast would have done on WordPress: complete product facts, theme Product/Organization schema, citeable PDP copy, Catalog eligibility. Details in [Shopify vs WordPress](#shopify-vs-wordpress) and [06](06-shopify-product-data-checklist.md).
 
 ### 5. Measurement — mentions, plus the clicks we can see
 
@@ -88,7 +88,7 @@ FAQ, HowTo, comparison, and Review/Offer will be **custom Bricks elements**, wri
 - **HowTo** — the page is a real procedure with numbered steps. Do not mark a marketing page as HowTo.
 - **Comparison table** — there is a real side-by-side comparison, not fake comparison markup.
 - **Review / Offer** — this vertical repeats reviews or offers (e.g. commerce), and any ratings in schema are also visible on the page.
-- **Lede / answer-first** — a visible opening sentence that says what it is, in HTML (not only in the hero). Example: “Northwind is project-controls software for industrial contractors.” **Not a custom element** — a Bricks component or text block is enough; there is no Yoast graph piece to justify PHP. Yoast’s description can reuse those words for snippets / `llms.txt`; it does not replace on-page text. Do not hide it for bots (cloaking). [09](09-client-citeability.md).
+- **Lede / answer-first** — a visible opening sentence that says what it is, in HTML (not only in the hero). Example: “Northwind is project-controls software for industrial contractors.” **Not a custom element** — a Bricks component or text block is enough; there is no Yoast graph piece to justify PHP. Yoast’s description can reuse those words for snippets / `llms.txt`; it does not replace on-page text. Do not hide it for bots (cloaking). [08](08-client-citeability.md).
 
 **When we write those elements in ElevateX (theme work, not page order)**
 
@@ -104,7 +104,7 @@ A page can have a lede and no FAQ. A page can have FAQ and no HowTo. “FAQ firs
 
 ### People, products, services, events (CPT kits — only if they repeat)
 
-Yoast will output Organization and a blog *author*. It will **not** notice a Leadership grid or a product card you built in Bricks. Pattern: [08](08-schema-data-and-cards.md).
+Yoast will output Organization and a blog *author*. It will **not** notice a Leadership grid or a product card you built in Bricks. Pattern: [07](07-schema-data-and-cards.md).
 
 **Do this**
 
@@ -131,7 +131,7 @@ What Yoast gives us on WordPress that we still **do ourselves** on Shopify (them
 - **Organization + `sameAs`** — often missing. Add via theme JSON-LD or brand settings.
 - **Product graph completeness** — Dawn-like themes emit a basic Product. Check brand, GTIN/barcode, offers, availability, ratings, shipping/returns. Legacy PDPs mixed with new templates are the usual fail.
 - **`llms.txt`** — no Yoast UI. **Not required.** Catalog + PDP HTML matter more. Add a theme-root file only if we want the same cheap hygiene as WP; do not buy a generator app.
-- **Money-page / PDP copy** — native Shopify SEO title and description + citeable first lines in the product description ([09](09-client-citeability.md)).
+- **Money-page / PDP copy** — native Shopify SEO title and description + citeable first lines in the product description ([08](08-client-citeability.md)).
 - **Article / page schema** — blog and landing templates; fix in the theme if missing. Still one graph — no duplicate schema apps.
 
 Shopify-only (no Yoast analog): **Agentic Storefronts / Catalog eligibility** in admin, metafields as structured facts, attribution if those channels are on.
@@ -148,7 +148,7 @@ Shopify-only (no Yoast analog): **Agentic Storefronts / Catalog eligibility** in
 - Sitemap in Google **and** Bing
 - Semantic HTML; answer in the first 2–3 paragraphs on money pages
 - GSC Generative AI report + GA4 AI referrers if the site is live and in scope
-- Hand the client [09](09-client-citeability.md)
+- Hand the client [08](08-client-citeability.md)
 
 **On every Shopify launch**
 
@@ -158,7 +158,7 @@ Shopify-only (no Yoast analog): **Agentic Storefronts / Catalog eligibility** in
 - Theme Product JSON-LD includes those facts; no duplicate Product graphs
 - Organization / brand `sameAs` present
 - Sitemap in Google **and** Bing
-- Hand the client [09](09-client-citeability.md) for product copy
+- Hand the client [08](08-client-citeability.md) for product copy
 - GSC + GA4 AI referrers if live and in scope
 - **Skip unless asked:** `llms.txt`, extra SEO/AI apps, custom MCP
 
