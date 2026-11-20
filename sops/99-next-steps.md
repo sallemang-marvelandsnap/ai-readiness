@@ -78,8 +78,8 @@ Source: M&S AI-ready SOPs 01, 02, 05, 07, 08.
 - [ ] Turn on only the ElevateX kits/elements this client actually has — do not register Team + Products + Services + Events “just in case”
 - [ ] Staging MCP (local/staging only)
   - [ ] Bricks → AI → MCP Adapter **Connected**
-  - [ ] Dedicated builder user; Application Password in 1Password (not git)
-  - [ ] Cursor pointed at the staging `/wp-json/mcp/mcp-adapter-default-server`
+  - [ ] Dedicated builder user; Application Password on **that** user; store in 1Password (not git)
+  - [ ] Copy the MCP snippet from Bricks → AI; add it in Cursor **Customize → MCPs** (or `.cursor/mcp.json`); username + Application Password = the dedicated user (not a chat prompt)
   - [ ] Official Bricks skills + `figma-to-bricks-drafts`
   - [ ] Figma MCP on **this** project’s file
 - [ ] Keep MCP off production
