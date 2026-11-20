@@ -30,6 +30,15 @@ export const sops: Sop[] = [
     group: 'start',
   },
   {
+    id: '98-cheat-sheet',
+    file: '98-cheat-sheet.md',
+    number: '98',
+    title: 'Cheat sheet',
+    blurb: 'Skim of 01–08. Headings and bullets only.',
+    audience: 'internal',
+    group: 'start',
+  },
+  {
     id: '03-wp-ai-readiness-checklist',
     file: '03-wp-ai-readiness-checklist.md',
     number: '03',
